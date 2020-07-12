@@ -11,7 +11,14 @@ import json
 @app.route("/")
 @app.route("/index")
 def index():
-    return render_template("index.html")
+    income_2zl = Msgs.query.filter_by(message='Test flipper 2zl')
+    income_5zl = Msgs.query.filter_by(message='Test flipper 5zl')
+
+    worth_2zl = len(income_2zl.all())*2
+    worth_5zl = len(income_5zl.all())*5
+
+    data= [int(worth_2zl), int(worth_5zl)]
+    return render_template("index.html", data=data)
 
     
 @app.route("/register", methods=['GET', 'POST'])
