@@ -87,9 +87,32 @@ def addincome2():
   return json.dumps({'message':'2zl recieved'})
 
 @app.route('/addincome5', methods=['GET'])
-def add_product():
+def addincome5():
   new_income = Msgs(message='Test flipper 5zl')
 
   db.session.add(new_income)
   db.session.commit()
   return json.dumps({'message':'5zl recieved'})
+
+
+@app.route('/delete2', methods=['GET'])
+@login_required
+def delete2():
+  try:
+    db.session.query(Msgs).filter(Msgs.message=='Flipper testowy z warsztatu 2zl').delete()
+    db.session.commit()
+  except:
+      db.session.rollback()
+
+  return json.dumps({'message':'2zl coins info deleted'})
+
+@app.route('/delete5', methods=['GET'])
+@login_required
+def delete5():
+  try:
+    db.session.query(Msgs).filter(Msgs.message=='Flipper testowy z warsztatu 5zl').delete()
+    db.session.commit()
+  except:
+      db.session.rollback()
+
+  return json.dumps({'message':'5zl coins info deleted'})
