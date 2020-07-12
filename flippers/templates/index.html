@@ -1,1 +1,15 @@
 {% extends "base.html" %}
+{% block content %}
+<form action="/addincome2" method="get">
+    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Add 2zl</button>
+</form>
+<form action="/addincome5" method="get">
+    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Add 5zl</button>
+</form>
+<form action="/delete2" method="get">
+    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Delete 2zl</button>
+</form>
+<form action="/delete5" method="get">
+    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Delete 5zl</button>
+</form>
+{% endblock content %}
