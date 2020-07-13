@@ -1,17 +1,89 @@
-{% extends "base.html" %}
-{% block content %}
-<form action="/addincome2" method="get">
-    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Add 2zl</button>
-</form>
-<form action="/addincome5" method="get">
-    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Add 5zl</button>
-</form>
-<form action="/delete2" method="get">
-    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Delete 2zl</button>
-</form>
-<form action="/delete5" method="get">
-    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Delete 5zl</button>
-</form>
+<!doctype html>
+<html>
+    <head>
+       <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Flippers</title>
+        <script type="text/javascript">
+            window.onload = function () {
+            //Better to construct options first and then pass it as a parameter
+            var options = {
+               width:500,
+               backgroundColor: "#e9ecef",
+                title: {
+                    text: "Stan wrzutników"              
+                },
+                data: [              
+                {
+                    // Change type to "doughnut", "line", "splineArea", etc.
+                    type: "column",
+                    dataPoints: [
+                        { label: "2zł",  y: parseInt('{{ data[0] }}')  },
+                        { label: "5zł", y: parseInt('{{ data[1] }}')  }
+                    ]
+                }
+                ]
+            };        
+            $("#chartContainer").CanvasJSChart(options);
+            }
+        </script>
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+              <div class="container">
+                <a class="navbar-brand mr-5" href="/">Flippers</a>
+                  <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+                  </div>
+                  <div class="navbar-nav">
+                    {% if current_user.is_authenticated %}
+      
+                      <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    {% else %}
+                      <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                    {% endif %}
+                  </div>
+              </div>
+            </nav>
+          </header>
+        <div style="width:500px; text-align:center; margin-left: auto;
+        margin-right: auto; background-color:#e9ecef">
+       
+            <div class="jumbotron jumbotron-fluid my-auto">
+                <p class="h1">Workshop Flipper</p>
 
-<h2 class="display-2">{{ data[0]+data[1] }}zł</h2>
-{% endblock content %}
+                <form action="/addincome2" method="get">
+                    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Add 2zl</button>
+                </form>
+                <form action="/addincome5" method="get">
+                    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Add 5zl</button>
+                </form>
+                <form action="/delete2" method="get">
+                    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Del 2zl</button>
+                </form>
+                <form action="/delete5" method="get">
+                    <button name="forwardBtn" type="submit" class="btn btn-primary mb-2">Del 5zl</button>
+                </form>
+
+                <h2 class="display-3">{{ data[0]+data[1] }}zł</h2>
+                
+            </div>
+            
+            <div id="chartContainer" style="height: 300px; width: 100%; float:right; margin: auto;"></div>         
+        </div>
+        
+
+
+
+       
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    </body>
+</html>
