@@ -95,3 +95,9 @@ SOFTWARE.
 - LinkedIn - [Marcin Gasiewicz](https://www.linkedin.com/in/margasiewicz)
 
 ## TODO
+
+- [ ] Extend discription
+- [ ] Add screens
+- [ ] Add documentation
+- [ ] Add author info
+ 
