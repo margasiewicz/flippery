@@ -1,8 +1,8 @@
-# Pinball machines remote controll via Shelly1
+# Pinball machines remote control via Shelly1
 
 > This project goals are:
 - to have information about machine's earnings
-- to remotely add free credits
+- to remotely add free play credits
 
 ---
 
@@ -13,7 +13,7 @@
 - [References](#references)
 - [License](#license)
 - [Documentation](#documentation)
-- [Author Info](#author-info)
+- [Author Info](#authors)
 - [TODO](#todo)
 
 ---
@@ -90,14 +90,15 @@ SOFTWARE.
 
 ---
 
-## Authors Info
-
-- LinkedIn - [Marcin Gasiewicz](https://www.linkedin.com/in/margasiewicz)
+## Authors
+- Marcin Gasiewicz
+  - [LinkedIn](https://www.linkedin.com/in/margasiewicz)
+- Jan Cichosz 
+  - [LinkedIn](https://www.linkedin.com/in/jancichosz)
 
 ## TODO
 
 - [ ] Extend discription
 - [ ] Add screens
 - [ ] Add documentation
-- [ ] Add author info
- 
+- [x] Add author info
