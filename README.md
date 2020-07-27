@@ -33,7 +33,7 @@
 #### Installation
 Clone repository and make sure that local master is up-to-date:
 ```bash
-git clone https://github.com/margasiewicz/FootballTeam-Bots.git
+git clone https://github.com/margasiewicz/flippery.git
 git pull origin master
 cd <directory path>
 ```
@@ -87,7 +87,11 @@ SOFTWARE.
 ---
 
 ## Documentation
-
+![1/5](https://github.com/margasiewicz/flippery/blob/master/images/1.png?raw=true)
+![2/5](https://github.com/margasiewicz/flippery/blob/master/images/2.png?raw=true)
+![3/5](https://github.com/margasiewicz/flippery/blob/master/images/3.png?raw=true)
+![4/5](https://github.com/margasiewicz/flippery/blob/master/images/4.png?raw=true)
+![5/5](https://github.com/margasiewicz/flippery/blob/master/images/5.png?raw=true)
 ---
 
 ## Authors
@@ -100,5 +104,5 @@ SOFTWARE.
 
 - [ ] Extend discription
 - [ ] Add screens
-- [ ] Add documentation
+- [x] Add documentation
 - [x] Add author info
