@@ -37,19 +37,24 @@ git clone https://github.com/margasiewicz/flippery.git
 git pull origin master
 cd <directory path>
 ```
-Create virtual environment
+#### Creating virtual environment
+###### Windows
 ```bash
-python3 -m venv venv_name
+py -m venv <venv_name>
+```
+###### Linux
+```bash
+python3 -m venv <venv_name>
 ```
 #### Activating virtual environment
 ###### Windows
 ```bash
-venv_name\Scripts\activate.bat
+<venv_name>\Scripts\activate.bat
 pip install -r requirements.txt
 ```
 ###### Linux
 ```bash
-source venv_name/bin/activate
+source <venv_name>/bin/activate
 pip install -r requirements
 ```
 
