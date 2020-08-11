@@ -72,18 +72,16 @@ def addincome2():
   new_income = Msgs(message='Test flipper 2zl')
   db.session.add(new_income)
   db.session.commit()
-  answer = json.dumps({'message':'2zl recieved'}) #for future use
-
-  return redirect(url_for('index'))
+ 
+  return {'message':'2zl received successfully'}, 201
 
 @app.route('/addincome5', methods=['GET'])
 def addincome5():
   new_income = Msgs(message='Test flipper 5zl')
   db.session.add(new_income)
   db.session.commit()
-  answer = json.dumps({'message':'5zl recieved'}) #for future use
 
-  return redirect(url_for('index'))
+  return {'message':'5zl received successfully'}, 201
 
 
 @app.route('/addcredit', methods=['POST'])
@@ -112,9 +110,8 @@ def delete2():
     db.session.commit()
   except:
       db.session.rollback()
-  answer = json.dumps({'message':'2zl coins info deleted'}) #for future use
 
-  return redirect(url_for('index'))
+  return {'message':'2zl info deleted'}, 200
   
 
 @app.route('/delete5', methods=['GET'])
@@ -125,6 +122,5 @@ def delete5():
     db.session.commit()
   except:
       db.session.rollback()
-  answer = json.dumps({'message':'5zl coins info deleted'}) #for future use
-
-  return redirect(url_for('index'))
+  
+  return {'message':'2zl info deleted'}, 200
