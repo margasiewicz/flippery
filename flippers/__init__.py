@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
-from secret_key import SECRET_KEY
+from secrets import SECRET_KEY
 
 
 app = Flask(__name__)
