@@ -57,6 +57,8 @@ pip install -r requirements.txt
 source <venv_name>/bin/activate
 pip install -r requirements
 ```
+#### Setting up
+Put your secret_key in flippers/secrets.py
 
 ---
 
