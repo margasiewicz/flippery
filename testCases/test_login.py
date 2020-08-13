@@ -7,8 +7,8 @@ class Test_001_Login:
     username = 'admin@gmail.com'
     password = 'admin'
 
-    def test_loginPageTitle(self):
-        self.driver = webdriver.Chrome()
+    def test_loginPageTitle(self, setup):
+        self.driver = setup
         self.driver.get(self.baseURL)
         act_title=self.driver.title
         self.driver.close()
@@ -18,7 +18,7 @@ class Test_001_Login:
             assert False
 
     def test_login(self):
-        self.driver = webdriver.Chrome()
+        self.driver = setup
         self.driver.get(self.baseURL)
         self.lp = Login()
         self.lp.setUserName(self.username)
