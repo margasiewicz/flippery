@@ -7,6 +7,7 @@ class Register:
     textbox_password_id = 'password'
     textbox_conf_password_id = 'confirm_password'
     button_register_xpath = '//*[@id="submit"]'
+    nav_login_page = '/html/body/main/div/div[2]/small/a'
     
     def __init__(self, driver):
         self.driver = driver
@@ -27,3 +28,6 @@ class Register:
     
     def clickSignUp(self):
         self.driver.find_element_by_xpath(self.button_register_xpath).click()
+    
+    def navigateToLoginPage(self):
+        self.driver.find_element_by_link_text('Sign In').click()

@@ -14,6 +14,11 @@ class ReadConfig:
     def getLoginURL():
         url = config.get('common info', 'loginURL')
         return url
+    
+    @staticmethod
+    def getRegisterURL():
+        url = config.get('common info', 'registerURL')
+        return url
 
     @staticmethod
     def getUsername():
