@@ -12,7 +12,7 @@ class Register:
     def __init__(self, driver):
         self.driver = driver
         
-    def setUserName(self, username):
+    def setUsername(self, username):
         self.driver.find_element_by_id(self.textbox_username_id).clear
         self.driver.find_element_by_id(self.textbox_username_id).send_keys(username)
         
