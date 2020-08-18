@@ -6,7 +6,7 @@ from utilities.readPropeties import ReadConfig
 class Test_001_Register:
     registerURL = ReadConfig.getRegisterURL()
     username = 'admin'
-    email = 'test@username.com'
+    email = 'admin@gmail.com'
     password = 'test123'
     faulty_pass = 'test1234'
     
@@ -28,10 +28,15 @@ class Test_001_Register:
         self.rp.setUserEmail(self.email)
         self.rp.setAndConfirmUserPassword(self.password, self.password)
         self.rp.clickSignUp()
-        self.driver.close()
-
-        try:
-            self.driver.find_element_by_class_name('invalid-feedback')
+        
+        
+        message = self.driver.find_elements_by_class_name('invalid-feedback')
+        if message:
+            for i in message:
+                error = i.find_element_by_tag_name("span").text
+                print(f'********** {error} **********')
             assert False
-        except:
+        else:
             assert True
+        self.driver.close()
+        

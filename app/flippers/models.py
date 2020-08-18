@@ -1,5 +1,5 @@
 from datetime import datetime
-from app.flippers import db, login_manager
+from flippers import db, login_manager
 from flask_login import UserMixin
 
 

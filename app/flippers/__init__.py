@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
-from app.flippers.secrets import SECRET_KEY
+from flippers.secrets import SECRET_KEY
 
 
 app = Flask(__name__)
@@ -14,4 +14,4 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 
-from app.flippers import routes
+from flippers import routes
