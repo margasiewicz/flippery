@@ -1,9 +1,9 @@
 from flask import render_template, url_for, flash, redirect, request
-from flippers.forms import RegistrationForm, LoginForm
+from app.flippers.forms import RegistrationForm, LoginForm
 from flask_login import login_user, current_user, logout_user, login_required
 
-from flippers.models import User, Msgs
-from flippers import app, db, bcrypt
+from app.flippers.models import User, Msgs
+from app.flippers import app, db, bcrypt
 import json
 
 

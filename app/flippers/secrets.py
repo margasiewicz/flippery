@@ -1,1 +1,1 @@
-SECRET_KEY = '<SECRET KEY>'
+SECRET_KEY = 'abcabc'
